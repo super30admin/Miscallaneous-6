@@ -1,7 +1,7 @@
 class Solution:
     def arrayThreshold(self, nums, desiredSum):
         #Approach: One-pass
-        #Time Complexity: O(n)
+        #Time Complexity: O(n log n) // due to sorting; O(n) otherwise
         #Space Complexity: O(1)
         
         if sum(nums) < desiredSum:
@@ -35,3 +35,5 @@ print(sol.arrayThreshold([5, 10, 4, 3, 9, 1], 25))
 print(sol.arrayThreshold([5, 10, 4, 3, 9, 1], 16))
 print(sol.arrayThreshold([5, 10, 4, 3, 9, 1], 22))
 print(sol.arrayThreshold([5, 10, 4, 3, 9, 1], 6))
+print('\n')
+print(sol.arrayThreshold([2, 1, 2, 6, 3], 10))
