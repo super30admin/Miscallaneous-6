@@ -9,7 +9,8 @@ class Solution:
     Approach: Using backtracking
     1. for a given array one can simply identify if a square is possible or not
        - by checking if sum of all elements is divisible by 4
-    2. create a list of length 4 (sqaure) to try stick lenghts in backtracking way:
+    2. sort the array in reverse order to initiate trying longer sticks first will reach to the conclusion earlier
+    3. create a list of length 4 (sqaure) to try stick lenghts in backtracking way:
        - for each element if the element in square are <= side length after adding element from the given array
        - backtrack if the combinations do not match to a square with equal sides (base condition)
        - loop through until we are out of all the trials
@@ -22,6 +23,7 @@ class Solution:
         
         sSum = sum(matchsticks); side = sSum//4
         if sSum % 4 != 0: return False
+        matchsticks.sort(reverse = True)
         
         return self.backtrack(0, matchsticks, [0,0,0,0], side)
     
